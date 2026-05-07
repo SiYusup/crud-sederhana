@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  #---- Service PHP & Apache -----
+  app: 
+    build:
+      context: .
+      dockerfile: docker/php.dockerfile
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+    networks:
+      - app-network
+
+  dockerdbhost:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: my_shop
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_USER: app_user
+      MYSQL_PASSWORD: app_password
+    ports:
+      - "3306:3306"
+    volumes: 
+      - db_data:/var/lib/mysql
+    networks:
+      - app-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      - PMA_HOST=dockerdbhost
+      - ARBITRARY=1
+    networks:
+      - app-network
+    depends_on:
+      - dockerdbhost
+  
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  db_data:

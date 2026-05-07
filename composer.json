@@ -1,0 +1,17 @@
+{
+    "name": "ucup/crud_sederhana",
+    "description": "Belajar CRUD dengan baik",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Ucup\\CrudSederhana\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Usyup",
+            "email": "finder.ucup@gmail.com"
+        }
+    ],
+    "require": {}
+}

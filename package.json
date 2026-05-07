@@ -1,0 +1,24 @@
+{
+  "name": "crud_sederhana",
+  "version": "1.0.0",
+  "description": "Belajar CRUD sederhana dengan bootstrap",
+  "homepage": "https://github.com/SiYusup/crud-sederhana#readme",
+  "bugs": {
+    "url": "https://github.com/SiYusup/crud-sederhana/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiYusup/crud-sederhana.git"
+  },
+  "license": "ISC",
+  "author": "Syekh Yusuf Pramadi",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.8"
+  }
+}
